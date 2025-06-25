@@ -7,6 +7,6 @@ bcrypt==4.0.1
 python-jose==3.3.0
 python-multipart==0.0.6
 pyjwt==2.8.0
-pandas==2.1.3
+pandas
 twilio==8.10.0
 websockets==12.0
