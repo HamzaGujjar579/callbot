@@ -11,3 +11,4 @@ pandas
 twilio==8.10.0
 websockets==12.0
 jinja2
+openai
