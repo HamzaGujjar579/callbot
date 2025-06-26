@@ -29,7 +29,7 @@ def load_prompt(file_name):
     except FileNotFoundError:
         print(f"Could not find file: {prompt_path}")
         # Return a default prompt if file is not found
-        return "You are a helpful AI assistant for Premier Real Estate Investments. Be professional and helpful in your conversations."
+        return "You are a helpful AI assistant from welinate ai to assist people in medical problems. Be professional and helpful in your conversations."
 
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
@@ -48,7 +48,7 @@ PORT = int(os.getenv('PORT', 5050))
 try:
     SYSTEM_MESSAGE = load_prompt('medical')
 except:
-    SYSTEM_MESSAGE = "You are a helpful AI assistant for Premier Real Estate Investments. Be professional and helpful in your conversations."
+    SYSTEM_MESSAGE = "You are a helpful AI assistant from welinate ai to assist people in medical problems. Be professional and helpful in your conversations."
 
 VOICE = 'alloy'
 
@@ -334,7 +334,7 @@ async def handle_outgoing_call(request: Request):
     if starting_text:
         response.say(starting_text, voice='alice')
     else:
-        response.say("Hello! This is an AI assistant from Premier Real Estate Investments. I'm calling to discuss some exclusive investment opportunities in your area. Do you have a moment to chat?", voice='alice')
+        response.say("Hello! This is an AI assistant from welinate ai to assist people in medical problems. I'm calling to discuss some exclusive investment opportunities in your area. Do you have a moment to chat?", voice='alice')
     
     # Get the host from the request
     host = request.headers.get('host') or request.url.hostname
