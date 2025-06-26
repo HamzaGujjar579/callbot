@@ -50,7 +50,7 @@ try:
 except:
     SYSTEM_MESSAGE = "You are a helpful AI assistant from welinate ai to assist people in medical problems. Be professional and helpful in your conversations."
 
-VOICE = 'alloy'
+VOICE = 'echo'
 
 # Validation checks
 if not OPENAI_API_KEY:
@@ -332,9 +332,9 @@ async def handle_outgoing_call(request: Request):
     
     response = VoiceResponse()
     if starting_text:
-        response.say(starting_text, voice='alice')
+        response.say(starting_text, voice='echo')
     else:
-        response.say("Hello! This is an AI assistant from welinate ai to assist people in medical problems. I'm calling to discuss some exclusive investment opportunities in your area. Do you have a moment to chat?", voice='alice')
+        response.say("Hello! This is an AI assistant from welinate ai to assist people in medical problems. I'm calling to discuss some exclusive investment opportunities in your area. Do you have a moment to chat?", voice='echo')
     
     # Get the host from the request
     host = request.headers.get('host') or request.url.hostname
